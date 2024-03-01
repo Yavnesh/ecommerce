@@ -1,3 +1,4 @@
+import CustomDataTable from "@/app/components/backoffice/customDataTable";
 import DashboardCharts from "@/app/components/backoffice/dashboardCharts";
 import Heading from "@/app/components/backoffice/heading";
 import LargeCards from "@/app/components/backoffice/largeCards";
@@ -15,6 +16,7 @@ export default function page() {
       {/* Charts */}
       <DashboardCharts />
       {/* Recent Order Table */}
+      <CustomDataTable />
     </div>
   );
 }
