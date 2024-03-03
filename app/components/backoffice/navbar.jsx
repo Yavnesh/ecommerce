@@ -12,11 +12,11 @@ import {
 import ThemeSwitcherBtn from '../ui/ThemeSwitcherBtn'
 
 
-function Navbar () {
+function Navbar ({setShowSidebar, showSidebar}) {
   return (
     <div className='flex items-center justify-between bg-white dark:bg-slate-800 text-slate-50 h-20 px-8 py-8 fixed top-0 w-full z-50 pr-[20rem]'>
         {/* Icon */}
-        <button className='text-green-600'><AlignJustify /></button>
+        <button onClick={() => setShowSidebar(!showSidebar)} className='text-green-600'><AlignJustify /></button>
         {/* 3 Icons */}
         <div className="flex space-x-3">
             <ThemeSwitcherBtn />
