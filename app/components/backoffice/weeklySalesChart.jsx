@@ -96,9 +96,9 @@ function WeeklySalesChart () {
   // };
 
   return (
-    <div className='bg-slate-700 p-8 rounded-lg'>
-      <h2 className='text-xl font-bold mb-4'>
-        Best Selling Products
+    <div className='dark:bg-slate-700 bg-slate-50 shadow-xl p-8 rounded-lg'>
+      <h2 className='text-xl font-bold mb-4 dark:text-slate-50 text-slate-800'>
+        Weekly Sales
       </h2>
       {/* Chart */}
       <div className='p-4'>
@@ -109,7 +109,7 @@ function WeeklySalesChart () {
                 tabs.map((tab, i) => {
                   return(
                     <li className="me-2" key={i}>
-                    <button onClick={() => setChartToDisplay(tab.type)} className={chartToDisplay == tab.type ? "inline-block p-4 text-orange-600 border-b-2 border-orange-600 rounded-t-lg active dark:text-orange-500 dark:border-orange-500" : "inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-100 dark:hover:text-gray-100"}>{tab.title}</button>
+                    <button onClick={() => setChartToDisplay(tab.type)} className={chartToDisplay == tab.type ? "inline-block p-4 text-orange-600 border-b-2 border-orange-600 rounded-t-lg active dark:text-orange-500 dark:border-orange-500" : "inline-block p-4 border-b-2 border-transparent rounded-t-lg text-slate-800 hover:text-gray-700 hover:border-gray-100 dark:hover:text-gray-100"}>{tab.title}</button>
                 </li>
                   );
                 })

@@ -29,7 +29,7 @@ function LargeCards () {
         {
             orderStats.map((item, i) => {
                 return(
-                    <LargeCard className="bg-green-600" data={item} key={i} />
+                    <LargeCard data={item} key={i} />
                 )
             })
         }

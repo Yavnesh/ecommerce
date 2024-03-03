@@ -8,10 +8,10 @@ export default function Layout({children}) {
         {/* sidebar */}
         <Sidebar />
         
-        <div className='w-full'>
+        <div className='w-full ml-60'>
             {/* header */}
             <Navbar />
-            <main className='p-8 bg-slate-900 text-slate-50 mt-16 ml-60 min-h-screen'>
+            <main className='p-8 bg-slate-50 dark:bg-slate-900 text-slate-50 mt-16 min-h-screen'>
                 {children}
             </main>
             {/* main */}
