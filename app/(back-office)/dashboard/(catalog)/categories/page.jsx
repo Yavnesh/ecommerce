@@ -1,9 +1,18 @@
-import Image from "next/image";
+import PageHeader from "@/app/components/backoffice/pageHeader";
+import TableActions from "@/app/components/backoffice/tableActions";
+
 
 export default function Categories() {
   return (
-    <div className="flex items-center justify-center flex-col min-h-screen">
-      <h2 className="text-4xl">
-      Welcome to ecommerce categories</h2></div>
+    <div>
+      {/* header */}
+      <PageHeader heading={"Categories"} href="/dashboard/categories/new" linkTitle={"Add Category"} />
+      {/* Table actions */}
+      {/* export || buld delete || search */}
+      <TableActions />
+      <div className="py-6">
+          
+      </div>
+    </div>
   );
 }
