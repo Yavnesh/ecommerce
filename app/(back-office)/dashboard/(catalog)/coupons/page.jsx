@@ -1,9 +1,18 @@
-import Image from "next/image";
+import PageHeader from "@/app/components/backoffice/pageHeader";
+import TableActions from "@/app/components/backoffice/tableActions";
+
 
 export default function Coupons() {
   return (
-    <div className="flex items-center justify-center flex-col min-h-screen">
-      <h2 className="text-4xl">
-      Coupons</h2></div>
+    <div>
+      {/* header */}
+      <PageHeader heading={"Coupons"} href="/dashboard/coupons/new" linkTitle={"Add Coupon"} />
+      {/* Table actions */}
+      {/* export || buld delete || search */}
+      <TableActions />
+      <div className="py-6">
+          
+      </div>
+    </div>
   );
 }
