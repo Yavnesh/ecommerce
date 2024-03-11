@@ -4,7 +4,6 @@ import SubmitButton from '@/app/components/backoffice/formInputs/submitButton'
 import TextInput from '@/app/components/backoffice/formInputs/textInput'
 import { makePostRequest } from '@/lib/apiRequest'
 import { generateCouponCode } from '@/lib/generateCouponCode'
-import GenerateSlug from '@/lib/generateSlug'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
@@ -13,8 +12,7 @@ export default function NewCoupon() {
     const [couponCode, setCouponCode] = useState()
     const {register, reset, watch, handleSubmit, formState:{errors}} = useForm()
     async function onSubmit(data){
-        const couponCode = generateCouponCode(data.title, data.expiryDate)
-      const slug = GenerateSlug(data.title)
+      const couponCode = generateCouponCode(data.title, data.expiryDate)
       data.couponCode = couponCode;
       console.log(data)
       makePostRequest(

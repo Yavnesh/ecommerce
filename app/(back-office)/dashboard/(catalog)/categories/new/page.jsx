@@ -14,7 +14,13 @@ export default function NewCategory() {
   const [loading, setLoading] = useState(false)
   const {register, reset, handleSubmit, formState:{errors}} = useForm()
   async function onSubmit(data){
-    
+    const slug = GenerateSlug(data.title)
+      data.slug = slug;
+      data.imageUrl = imageUrl;
+      console.log(data)
+      makePostRequest(
+        setLoading, 'api/categories', data, 'Category', reset
+      );
   }
 
   return (

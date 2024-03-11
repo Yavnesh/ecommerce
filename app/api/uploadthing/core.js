@@ -9,5 +9,20 @@ export const ourFileRouter = {
     // Set permissions and file types for this FileRoute
     .onUploadComplete(async ({ metadata, file }) => {
         console.log("file url", file.url, metadata);
+        return {uploadedBy: "admin"};
+      }),
+
+    bannerImageUploader: f({ image: { maxFileSize: "1MB" } })
+    // Set permissions and file types for this FileRoute
+    .onUploadComplete(async ({ metadata, file }) => {
+        console.log("file url", file.url, metadata);
+        return {uploadedBy: "admin"};
+      }),
+
+    productImageUploader: f({ image: { maxFileSize: "1MB" } })
+    // Set permissions and file types for this FileRoute
+    .onUploadComplete(async ({ metadata, file }) => {
+        console.log("file url", file.url, metadata);
+        return {uploadedBy: "admin"};
       }),
 }
