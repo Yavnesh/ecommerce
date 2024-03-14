@@ -5,6 +5,7 @@ import ImageInput from '@/app/components/backoffice/formInputs/imageInput'
 import SubmitButton from '@/app/components/backoffice/formInputs/submitButton'
 import TextAreaInput from '@/app/components/backoffice/formInputs/textAreaInput'
 import TextInput from '@/app/components/backoffice/formInputs/textInput'
+import ToggleInput from '@/app/components/backoffice/formInputs/toggleInput'
 import { makePostRequest } from '@/lib/apiRequest'
 import GenerateSlug from '@/lib/generateSlug'
 import React, { useState } from 'react'
@@ -33,7 +34,8 @@ export default function NewProduct() {
   const [loading, setLoading] = useState(false)
   
   const [tags, setTags] = useState(["tag1", "tag2"])
-  const {register, reset, handleSubmit, formState:{errors}} = useForm()
+  const {register, reset, watch, handleSubmit, formState:{errors}} = useForm({defaultValues:{isActive:true}})
+  const isActive = watch('isActive');
   async function onSubmit(data){
     // -id, -title, -slug, -description, -image/images[], -sku, -barcode, -productPrice,-salePrice, -category, -tags[]
     const slug = GenerateSlug(data.title)
@@ -62,6 +64,7 @@ export default function NewProduct() {
         {/* tags */}
         <ArrayItemInput setTags={setTags} tags={tags} />
         <TextAreaInput label="Product Description" name="description" register={register} errors={errors} />
+        <ToggleInput label="Activate Product" name="isActive" trueStatus="Active" falseStatus="Draft" register={register} />
         </div>
       <SubmitButton className="" isLoading={loading} buttonTitle="Create Product" loadingButtonTitle="Creating Product Please Wait..." />
       </form>
